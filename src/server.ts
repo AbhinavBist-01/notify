@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import { env } from './config/env.js';
 import { healthRouter } from './routes/health.js';
+import { notificationRouter } from './modules/notifications/notification.router.js';
 import { errorHandler, notFoundHandler } from './middleware/error-handler.js';
 import { closeDatabase } from './database/index.js';
 import { closeRedis } from './lib/redis.js';
@@ -29,6 +30,9 @@ export function createApp(): Express {
 
   // Health check routes
   app.use('/health', healthRouter);
+
+  // API v1 routes
+  app.use('/api/v1/notifications', notificationRouter);
 
   // 404 Handler for unmatched routes
   app.use(notFoundHandler);
