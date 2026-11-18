@@ -1,5 +1,5 @@
-import { notificationRepository } from './modules/notifications/notification.repository.js';
-import { closeDatabase } from './database/index.js';
+import { notificationRepository } from '../src/modules/notifications/notification.repository.js';
+import { closeDatabase } from '../src/database/index.js';
 
 async function main() {
   console.log('🧪 Testing Notification Persistence...');
@@ -63,7 +63,7 @@ async function main() {
   }
 
   await closeDatabase();
-  console.log('\n🎉 All database tests passed successfully!');
+  console.log('\n🎉 All database tests passed successfully!\n');
 }
 
 main().catch(async (err) => {

@@ -1,6 +1,6 @@
-import { createApp } from './server.js';
-import { closeDatabase } from './database/index.js';
-import { closeRedis } from './lib/redis.js';
+import { createApp } from '../src/server.js';
+import { closeDatabase } from '../src/database/index.js';
+import { closeRedis } from '../src/lib/redis.js';
 import type { Server } from 'node:http';
 
 async function runTests() {
@@ -113,7 +113,7 @@ async function runTests() {
     });
     console.log(`   Status: ${res7.status} (Expected 404): ${res7.status === 404 ? '✅ PASS' : '❌ FAIL'}`);
 
-    console.log('\n🎉 ALL MILESTONE 3 API TESTS PASSED SUCCESSFULLY!');
+    console.log('\n🎉 ALL MILESTONE 3 API TESTS PASSED SUCCESSFULLY!\n');
   } finally {
     server!.close();
     await closeDatabase();

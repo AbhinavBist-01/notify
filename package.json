@@ -10,7 +10,9 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:db": "tsx tests/db.test.ts",
+    "test:api": "tsx tests/api.test.ts",
+    "test": "tsx tests/db.test.ts && tsx tests/api.test.ts"
   },
   "keywords": [],
   "author": "",
